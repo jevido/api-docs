@@ -16,7 +16,7 @@
 
 	function openDocs(event) {
 		event.preventDefault();
-		goto(`/${source}`);
+		goto(`/docs/${source}`);
 	}
 </script>
 
@@ -37,7 +37,7 @@
 		<Card.Content>
 			<form onsubmit={openDocs} class="flex gap-2">
 				<Input bind:value={source} placeholder="Enter the url of your apispecs" />
-				<Button data-sveltekit-preload-data="tap" href="/{source}" disabled={source === ''}
+				<Button data-sveltekit-preload-data="tap" href="/docs/{source}" disabled={source === ''}
 					>submit</Button
 				>
 			</form>
@@ -47,7 +47,7 @@
 			<p>Or pick any of these example tokens:</p>
 			<div class="flex justify-center gap-2">
 				{#each demos as token}
-					<Button variant="outline" href="/{token.source}">{token.label}</Button>
+					<Button variant="outline" href="/docs/{token.source}">{token.label}</Button>
 				{/each}
 			</div>
 		</Card.Footer>
