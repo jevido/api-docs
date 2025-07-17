@@ -14,13 +14,13 @@
 		}
 	];
 
-	function openMembershipCard(event) {
+	function openDocs(event) {
 		event.preventDefault();
 		goto(`/${source}`);
 	}
 </script>
 
-<svelte:head><title>Member cards example</title></svelte:head>
+<svelte:head><title>OpenAPI Docs</title></svelte:head>
 
 <div class="flex h-screen w-screen items-center justify-center">
 	<Card.Root class="w-2xl">
@@ -35,7 +35,7 @@
 			</Card.Description>
 		</Card.Header>
 		<Card.Content>
-			<form onsubmit={openMembershipCard} class="flex gap-2">
+			<form onsubmit={openDocs} class="flex gap-2">
 				<Input bind:value={source} placeholder="Enter the url of your apispecs" />
 				<Button data-sveltekit-preload-data="tap" href="/{source}" disabled={source === ''}
 					>submit</Button
